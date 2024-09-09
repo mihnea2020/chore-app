@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Collaborative Chore List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loginContainer" class="container">
+        <h1>Enter Username</h1>
+        <form id="loginForm">
+            <input type="text" id="usernameInput" placeholder="Enter your username" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div id="choreContainer" class="container hidden">
+        <h1>Chore List</h1>
+        <form id="choreForm">
+            <input type="text" id="choreInput" placeholder="Enter a new chore" required>
+            <select id="choreFrequency">
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="yearly">Yearly</option>
+            </select>
+            <button type="submit">Add Chore</button>
+        </form>        
+        <h2>Weekly Chores</h2>
+        <ul id="weeklyChoreList"></ul>
+        <h2>Monthly Chores</h2>
+        <ul id="monthlyChoreList"></ul>
+        <h2>Yearly Chores</h2>
+        <ul id="yearlyChoreList"></ul>
+        <button id="logoutButton">Logout</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
